@@ -1,0 +1,17 @@
+server:
+  port: 0
+
+spring:
+  datasource:
+    url: ${DATABASE_URL}
+    username: ${DATABASE_USERNAME}
+    password: ${DATABASE_PASSWORD}
+
+    hikari:
+      connection-timeout: 10000
+      maximum-pool-size: 3
+
+jwt:
+  secret-key: ${JWT_SECRET}
+  expiration: 2592000000
+  refresh: 86400000
