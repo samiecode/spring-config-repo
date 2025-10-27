@@ -10,6 +10,15 @@ spring:
     hikari:
       connection-timeout: 10000
       maximum-pool-size: 3
+      
+  jpa:
+    hibernate:
+      ddl-auto: ${DDL_AUTO}
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+    database: postgresql
 
 jwt:
   secret-key: ${JWT_SECRET}
