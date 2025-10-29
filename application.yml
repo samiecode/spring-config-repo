@@ -17,6 +17,15 @@ spring:
         format_sql: true
     database: postgresql
 
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+  endpoints:
+    web:
+      exposure:
+        include: refresh, health, info
+
 jwt:
   secret-key: ${JWT_SECRET}
   expiration: 2592000000
