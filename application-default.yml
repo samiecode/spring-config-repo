@@ -1,0 +1,32 @@
+spring:
+  datasource:
+    url: ${DATABASE_URL}
+    username: ${DATABASE_USERNAME}
+    password: ${DATABASE_PASSWORD}
+
+    hikari:
+      connection-timeout: 10000
+      maximum-pool-size: 3
+
+  jpa:
+    hibernate:
+      ddl-auto: ${JPA_DDL_AUTO}
+    show-sql: ${JPA_SHOW_SQL}
+    properties:
+      hibernate:
+        format_sql: true
+    database: postgresql
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+  endpoints:
+    web:
+      exposure:
+        include: refresh, health, info
+
+jwt:
+  secret-key: ${JWT_SECRET}
+  expiration: 2592000000
+  refresh: 86400000
